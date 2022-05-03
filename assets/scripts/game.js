@@ -4,20 +4,20 @@ let game = {
     firstCard:null,
     secondCard:null,
 
-
-    heroes: [
-        "batman",
-        "ironman",
-        "doctor",
-        "supergirl",
-        "skywalker",
-        "spiderman",
-        "angry",
-        "superman",
-        "thor",
-        "yoda"],
+heroes: [
     
-         cards :  null,
+   "batman",
+    "ironman",
+    "doctor",
+    "supergirl",
+    "skywalker",
+    "spiderman",
+    "dart",
+    "superman",
+    "thor",
+    "yoda"],
+    
+   cards :  null,
 
 setCard: function (id) {
 
