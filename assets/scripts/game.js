@@ -19,8 +19,7 @@ let game = {
     
          cards :  null,
 
-
-    setCard: function (id) {
+setCard: function (id) {
 
       let card = this.cards.filter(card => card.id === id)[0];
       console.log(card);
@@ -40,35 +39,30 @@ let game = {
       }
 
     },
-
-    checkMatch: function (){
+checkMatch: function (){
         if(!this.firstCard || !this.secondCard ){
             return false;
         }
         return this.firstCard.icon === this.secondCard.icon;
 
-    },
-
-    clearCards: function (){
+},
+clearCards: function (){
         this.firstCard = null;
         this.secondCard = null;
         this.LockMode = false;
-    },
-
-    unflipCards() {
+},
+unflipCards() {
         this.firstCard.flipped = false;
         this.secondCard.flipped = false;
         this.clearCards();
-    },
+},
+checkGameOver() {
 
-    checkGameOver() {
-
-        return this.cards.filter(card => !card.flipped).length == 0;
-    },
-
+       return this.cards.filter(card => !card.flipped).length == 0;
+},
 
 
-     createCardsFromHeroes: function () {
+createCardsFromHeroes: function () {
         
          this.cards = [];
 
@@ -79,11 +73,9 @@ let game = {
      this.cards =  this.cards.flatMap(pair => pair);
      this.shuffleCards();
      return this.cards;
+},
 
-    },
-
-
-     createPairFromPower: function(power){
+createPairFromPower: function(power){
 
         return [{
             id: this.createIdWithPower(power),
@@ -94,15 +86,14 @@ let game = {
             icon:power,
             flipped:false,
         }]
-    },
+},
 
-     createIdWithPower: function(power){
-        return power + parseInt(Math.random() * 1000);
+createIdWithPower: function(power){
+    return power + parseInt(Math.random() * 1000);
     
 },
 
-
-     shuffleCards:function(cards) {
+shuffleCards:function(cards) {
 
         let currentIndex = this.cards.length;
         let randomIndex = 0;
@@ -117,10 +108,5 @@ let game = {
 
         }
 
-    }
-
-
-
-
-
+  }
 }
